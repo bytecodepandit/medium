@@ -38,6 +38,7 @@ export const NavMenu = ({ token = "" }: any) => {
           href="https://github.com/eightants/reddium/"
           target="_blank"
           rel="noopener noreferrer"
+          className='md:hidden'
         >
           <img
             className="h-10 cursor-pointer p-1 ml-2 sub-opacity-68 link-black-hover hidden md:block"
@@ -50,7 +51,7 @@ export const NavMenu = ({ token = "" }: any) => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <button className="md:hidden my-4 ml-4 p-1 px-3 sub-opacity-68 link-black-hover text-sm cursor-pointer max-w-full btn-outline-black rounded">
+        <button className="md:visible my-4 ml-4 p-1 px-3 sub-opacity-68 link-black-hover text-sm cursor-pointer max-w-full btn-outline-black rounded">
           Star on GitHub
         </button>
       </a>
@@ -58,7 +59,7 @@ export const NavMenu = ({ token = "" }: any) => {
         <ProfileOptions />
       ) : (
         <a
-          href={`https://www.reddit.com/api/v1/authorize.compact?client_id=${CLIENT_ID}&response_type=code&state=testing&redirect_uri=${REDIRECT_URI}&duration=temporary&scope=${encodeURIComponent(
+          href={`https://www.reddit.com/api/v1/authorize.compact?client_id=${process.env.CLIENT_ID}&response_type=code&state=testing&redirect_uri=${process.env.REDIRECT_URI}&duration=temporary&scope=${encodeURIComponent(
             "read vote save identity subscribe"
           )}`}
         >
